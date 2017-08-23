@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+coverage/
+extra/
+test/
+.travis.yml
+api.md
