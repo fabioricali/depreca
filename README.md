@@ -16,7 +16,7 @@ npm install depreca --save
 ```
 
 ## Example
-Just one constructor method!
+Just one method!
 
 ### Deprecate function
 ```javascript
