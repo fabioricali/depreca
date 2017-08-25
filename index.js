@@ -6,7 +6,7 @@
  */
 module.exports = (prop, msg) => {
     if(typeof prop !== 'undefined') {
-        console.warn(msg || prop);
+        console.warn('[DeprecationWarning]', msg || prop);
         return true;
     }
     return false;
