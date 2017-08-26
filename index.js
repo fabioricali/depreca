@@ -1,13 +1,35 @@
+const _list = [];
+
 /**
  * Simple deprecate
- * @param prop
- * @param msg
+ * @param prop {*}
+ * @param msg {string}
  * @returns {boolean}
  */
-module.exports = (prop, msg) => {
+const deprecate = (prop, msg) => {
     if(typeof prop !== 'undefined') {
-        console.warn('[DeprecationWarning]', msg || prop);
+        msg = msg || prop;
+
+        if(!_list.includes(msg))
+            _list.push(msg);
+
+        console.warn('[DeprecationWarning]', msg);
         return true;
     }
     return false;
 };
+
+/**
+ * Calls only once same deprecation
+ * @param args
+ * @returns {boolean}
+ */
+const once = (...args) => {
+    if(_list.includes(args[1] || args[0]))
+        return false;
+    return deprecate.apply(this, args);
+};
+
+module.exports = deprecate;
+module.exports.once = once;
+module.exports._list = _list;

@@ -23,7 +23,8 @@ Just one method!
 const deprecate = require('depreca');
 
 function foo(){
-    deprecate('foo() is deprecated use bar() instead'); //=> [DeprecationWarning] foo() is deprecated use bar() instead
+    deprecate('foo() is deprecated use bar() instead'); 
+    //=> [DeprecationWarning] foo() is deprecated use bar() instead
 }
 ```
 ### Deprecate object property
@@ -33,8 +34,13 @@ const config = {
     bar: 'world'
 };
 
-deprecate(config.foo, 'foo is deprecated use bar instead'); //=> [DeprecationWarning] foo is deprecated use bar instead
+deprecate(config.foo, 'foo is deprecated use bar instead'); 
+//=> [DeprecationWarning] foo is deprecated use bar instead
+```
 
+### Call only once of deprecate
+```javascript
+deprecate.once('foo() is deprecated use bar() instead'); 
 ```
 
 ## Changelog
