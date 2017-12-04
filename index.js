@@ -13,11 +13,13 @@ const deprecate = (prop, msg) => {
         if(!_list.includes(msg))
             _list.push(msg);
 
-        console.warn('[DeprecationWarning]', msg);
+        console.warn('[' + deprecate.title + ']', msg);
         return true;
     }
     return false;
 };
+
+deprecate.title = 'DeprecationWarning';
 
 /**
  * Calls only once same deprecation

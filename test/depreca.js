@@ -36,4 +36,10 @@ describe('deprecate', function () {
         console.log(result);
         be.err.true(result);
     });
+    it('set warningTitle', () => {
+        deprecate.title = 'WARNING THIS IS A DEPRECATION TITLE';
+        const result = deprecate('bar5() is deprecated');
+        console.log(result);
+        be.err.true(result);
+    });
 });
