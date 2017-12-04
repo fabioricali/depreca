@@ -36,6 +36,11 @@ const config = {
 
 deprecate(config.foo, 'foo is deprecated use bar instead'); 
 //=> [DeprecationWarning] foo is deprecated use bar instead
+
+// set a custom deprecation title
+deprecate.title = 'MyCustomDeprecation';
+deprecate(config.bar, 'bar is deprecated use foo instead'); 
+//=> [MyCustomDeprecation] bar is deprecated use foo instead
 ```
 
 ### Call only once of deprecate
