@@ -1,4 +1,4 @@
-const deprecate = require('../');
+const deprecate = require('..');
 const be = require('bejs');
 
 describe('deprecate', function () {
